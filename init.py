@@ -47,7 +47,7 @@ def get_reminders():
 
     for key in userReminders:
         if currentTime >= userReminders[key]['alarm']:
-            print("alarm set")
+            print(userReminders[key]["title"])
             print(time.ctime(userReminders[key]["alarm"] / 1000))
         else:
             print("there is going to be alarm soon")
@@ -62,4 +62,5 @@ schedule.every(5).seconds.do(get_reminders)
 
 while True:
     schedule.run_pending()
+    print("daa")
     time.sleep(1)
